@@ -87,8 +87,11 @@ https://www.dataloggerinc.com/wp-content/uploads/2016/11/16_Basics_of_signal_att
 
 https://www.electronics-notes.com/articles/radio/rf-attenuators/what-is-an-rf-attenuator-types.php
 
+Attenuation is the degradation of signal stregth during transmission, this is causes inteferance to devices close to the transmitting device which might cause it to loss data. Attenuation is reprenseted using decibels(dB). Decibels are the logarithms amplification by a factor of 10 by an input signal and devided by the output .
 
+![FORMULA](https://wikimedia.org/api/rest_v1/media/math/render/svg/db593d0adac70afe8299b6e46a122719a48fc0a9)
 
+Attenuation decreases the efficiency of a transmitted electrical signal due the absorbsion or scattering of the photons. One of the main benefits of using 2.4ghz for protocols like wifi and bluetooth is the lack of inteference due to weather conditions.
 
 
 
