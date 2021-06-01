@@ -38,6 +38,26 @@ https://www.scientificamerican.com/article/experts-how-does-bluetooth-work/
 https://techspirited.com/how-does-bluetooth-work
 https://ieeexplore.ieee.org/abstract/document/824570?casa_token=dUcTveas6GkAAAAA:B5RAywdmD74wiBePLyszuzFhUsvzuin--HUvxDcrDBfQY0qjGUhoPZE0zQevAXHAdCjfZtP4
 
+### Bluetooth Controller
+
+The Bluetooth controller is in charge of inplimenting the physical layer (Layer 1) of bluetooth which is made up of the radio , baseband and link managment layer. It establishes the initial communication with the destination device using the Host Controller Interface . The link managment layer is in charge of creating that initial connection between two devices in turn use the baseband layer to create an access control system through the radio link layer . 
+
+
+"Multi-level Bluetooth Intrusion Detection System" (cite)
+
+
+### Host Controller Interface (HCI)
+
+The HCI layer is a mediator between the controller and host. The host uses the host controller interface to establish a link between it and the bluetooth controller .  
+
+"Multi-level Bluetooth Intrusion Detection System" (cite)
+
+### Bluetooth Host 
+The Blutooth Host houses the bluetooth protocols logical stack  components which allow the bluetooth protocol to be used with different applications .
+
+"Multi-level Bluetooth Intrusion Detection System" (cite)
+
+
 ## Harmonics
 
 Every electornic device which utilises Radio frequencies for communication and operation such as wifi , zigbee , lora etc.. are prone to harmonic frequecy emission . This is one of the fundamental properties of electromagnetic radiation . Electronic devices are under heavy regulation from bodies like the FCC which are in charge of reducing and controlling the behaiviour of these emissions .
