@@ -114,6 +114,8 @@ Attenuation is the degradation of signal stregth during transmission, this is ca
 Attenuation decreases the efficiency of a transmitted electrical signal due the absorbsion or scattering of the photons. One of the main benefits of using 2.4ghz for protocols like wifi and bluetooth is the lack of inteference due to weather conditions.
 
 
+## Notes on "Investigating Radio Frequency Vulnerabilities in IoT(Using a HackRF)" 
 
-
+1. Using a non resonant antenna for 2.4ghz will cause high Standing wave ratio which will result in loss of packets , loss of power and possible damage to electronic components of the HackRF. Even at 1.1Ghz the closest resonant harmonic frequency which is 2.2ghz which is still very far away from 2.4GHz . It is offset by 200 mhz . 
+2. 
 
