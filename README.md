@@ -130,5 +130,10 @@ Attenuation decreases the efficiency of a transmitted electrical signal due the 
 2. Assumes Zigbee devices has two antennas, but in reality will not work on devices using only one. 
 3. Need extra device to actually test for interferance and try to avoid it .
    
+## A Database for the Radio Frequency Fingerprintingof Bluetooth Devices
 
+Very interesting paper but requires very specilied hardware to actually function 250Msps is very high 
 
+## A Technical Review of Wireless security for theInternet of things: Software Defined Radioperspective
+Intersting ideas for attacks but most of them can be achieved with cheap SDR hardware like the RTL_SDR , NooElec smart sdr.
+Rebroadcasting ACARS packets is nothing new or difficult to do. It can be done easily with a Baofeng UV-5R and a cheap arduino or raspberry pi .
