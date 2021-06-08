@@ -117,5 +117,18 @@ Attenuation decreases the efficiency of a transmitted electrical signal due the 
 ## Notes on "Investigating Radio Frequency Vulnerabilities in IoT(Using a HackRF)" 
 
 1. Using a non resonant antenna for 2.4ghz will cause high Standing wave ratio which will result in loss of packets , loss of power and possible damage to electronic components of the HackRF. Even at 1.1Ghz the closest resonant harmonic frequency which is 2.2ghz which is still very far away from 2.4GHz . It is offset by 200 mhz . 
-2. 
+
+## Securing ZigBee Communications Against ConstantJamming Attack Using Neural Network
+
+1. ZigBee receiver suffers from larger than 90% packeterror rate.
+2. Uses spectrum spreading to stop interferance but in reality fails.
+3. Using greater that -1.6 dB of noise will interupt the signal. 
+
+### Criticism 
+
+1. Makes the assumption that interference cancelation just using more power in the case of "wifi" . 
+2. Assumes Zigbee devices has two antennas, but in reality will not work on devices using only one. 
+3. Need extra device to actually test for interferance and try to avoid it .
+   
+
 
