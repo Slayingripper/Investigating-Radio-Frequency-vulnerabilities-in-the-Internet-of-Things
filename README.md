@@ -137,3 +137,13 @@ Very interesting paper but requires very specilied hardware to actually function
 ## A Technical Review of Wireless security for theInternet of things: Software Defined Radioperspective
 Intersting ideas for attacks but most of them can be achieved with cheap SDR hardware like the RTL_SDR , NooElec smart sdr.
 Rebroadcasting ACARS packets is nothing new or difficult to do. It can be done easily with a Baofeng UV-5R and a cheap arduino or raspberry pi .
+
+
+## GNU RADIO ZIGBEE sketches
+### Receiving 
+
+Using the hackrf we set it to receive at a frequency "X" wiht a sample rate of 5 Msps and a IF gain of 16db and Baseband gain of 16db. We then resammple the signal through a low pass filter to remove any unwanted noise. We save the capture data as a binary file using File Sink. 
+
+### Analysing 
+
+To analysise the receive file we used gnu radio to create a sketch that would decode the data live and plot a graph of relative gain and amplitude. 
