@@ -3,10 +3,23 @@
 this
 
 # Introduction
+With the advancment in internet technology in the last 30 years , a new market of devices has emerged that combine the use of the internet and sensors to exchange information between thm in a meaningful way. These devices are called Internet of Things or in short IoT . The mass marketing and adoption of these devices has made easily available to many people which implement them in their home without proper infustractior with many of them being vulnerable to low level attacks. There have been studies and testing done on IoT devices in regards to network penetration testing but there is a lack of research in the field of Radio Frequency. The increase in IoT device attacks has surge drastically in the past few years , specifically in 2019 there was a record of 2.9 Billion attacks collected by honey pots on IoT devices. That was a 300% increase in attacks in comparison to the previous year where there where only 819 Million attacks.
+
+One of the major attacks which have compromised many Zigbee based IoT devices is the Zigbee Worm attack which exploits hardcoded symmetric encryption keys in the Zigbee protocol that allow the worm to take control of the devices . This then allows it to spread to other nearby zigbee devices allowing for full control of the network . This can be done as far as 400 meters away which makes it even more difficult to track and trace.
+
+
+xploits hardcoded symmetric encryption keys to control devices over Zigbee wireless networks. This allows the malware to compromise a single light globe from up to 400 metres away.
+
+The worm can then spread from a single smart bulb to those nearby thanks to the use of these skeleton keys.
+[cite]https://www.theregister.com/2016/11/10/iot_worm_can_hack_philips_hue_lightbulbs_spread_across_cities/
+
+[cite]https://blog-assets.f-secure.com/wp-content/uploads/2019/09/12093807/2019_attack_landscape_report.pdf
+# Motivation 
+
 
 ## Hack RF
 
-The HackRF is a half-duplex sdr transceiver designed for RF investigation. It has an operating frequency of 1Mhz - 6Ghz with a 8-bit quadrature sample rate. The hackrf has a maximun transmition power of 30mW this makes it suitable for transmittion at close ranges but it prone to emission of sperodic emissions which could compromise nearby equipement if used with amplification equipment.
+The HackRF is a half-duplex sdr transceiver designed for RF investigation. It has an operating frequency of 1Mhz - 6Ghz with a 8-bit quadrature sample rate. The hackrf has a maximun transmition power of 30mW this makes it suitable for transmittion at close ranges but it prone to emission of sperodic emissions which could compromise nearby equipment if used with amplification equipment.
 The HackRF is compatable with GNU-Radio allowing it be calibrated to work with multiple other equipment and protocols. One of the main disadvatages of the HackRF is its subpar receive perfomance .
 ![HackRF one](https://greatscottgadgets.com/images/h1-preliminary1-445.jpeg)
 
