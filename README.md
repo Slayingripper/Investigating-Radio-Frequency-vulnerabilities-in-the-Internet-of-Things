@@ -8,13 +8,22 @@ With the advancment in internet technology in the last 30 years , a new market o
 One of the major attacks which have compromised many Zigbee based IoT devices is the Zigbee Worm attack which exploits hardcoded symmetric encryption keys in the Zigbee protocol that allow the worm to take control of the devices . This then allows it to spread to other nearby zigbee devices allowing for full control of the network . This can be done as far as 400 meters away which makes it even more difficult to track and trace.
 
 
-xploits hardcoded symmetric encryption keys to control devices over Zigbee wireless networks. This allows the malware to compromise a single light globe from up to 400 metres away.
 
 The worm can then spread from a single smart bulb to those nearby thanks to the use of these skeleton keys.
 [cite]https://www.theregister.com/2016/11/10/iot_worm_can_hack_philips_hue_lightbulbs_spread_across_cities/
 
 [cite]https://blog-assets.f-secure.com/wp-content/uploads/2019/09/12093807/2019_attack_landscape_report.pdf
-# Motivation 
+## Motivation 
+
+
+## Dissertation Structure 
+
+### Related Work
+### Design
+### Implementation
+### Methodology 
+### Conclusion
+### Reflection
 
 
 ## Hack RF
@@ -160,3 +169,50 @@ Using the hackrf we set it to receive at a frequency "X" wiht a sample rate of 5
 ### Analysing 
 
 To analysise the receive file we used gnu radio to create a sketch that would decode the data live and plot a graph of relative gain and amplitude. 
+
+
+
+
+
+# Radio Frequency Protection Techniques 
+
+
+## Encrpytion 
+
+## Hopping
+
+
+
+## Scrambling 
+The oldest method of obsuscating the content of RF transmittions is scrambling. This is done using a set frequency value to invert the frequency of the input signal which creates a "clone" of the signal on a different frequency range. In other words , the signal is transposed to a different range and can only be decoded by a device using te same frequency offset and settings. Compared to other methods of protections , it is the most primitive as it can be easily broken and descrambled. Even more complex scrambling methods like split-band inversion are also prone to desrambling.
+
+Decrambling voice communication for example, can be done by recording the signal we want to descramble using a program like SDR# and  SDR capable of listenig on the specified frequency. After recording the IQ data we play it back using the same software and look for the inverse modulation. Depending on the modulation we can use either Upper or Lower Side band modulation to demodulate one of the two inverted modulations. 
+
+
+[Frequency scrambler](https://www.vocal.com/secure-communication/frequency-scrambler-frequency-inversion/)
+[descrambling](http://www.windytan.com/2017/09/descrambling-split-band-voice-inversion.html)
+### Split-Band inversion
+
+Split-Band inversion works by adding one more carrier frequency which devides the spectrum into two equal but opposite parts and then combines them both into one signal. The most difficult part is finding the two initial frequencies before the combination happens.
+
+![split band circuit](https://3.bp.blogspot.com/-rFNtDEdtZ-c/XWPYpsGi_zI/AAAAAAAAFN8/e4lp0EG5XtYrm72DkgCRLLEMXE052_yjgCLcBGAs/s420/dspchain.png)
+
+#### Scrambling conclusion
+
+There are automated programs that do this for us one example is deinvert by Oona Raisanen which can automatically monitor a frequency using an RTL-SDR and do the whole processes without any fidling around. This also works with Split-Band Inversion but at a lower success rate. 
+[Deinvert](https://github.com/windytan/deinvert)
+On its own scrambling is effectivly weak and only stops the weakest of malicious actors from listening and sniffing data. It needs to be combined with other forms of security.
+
+
+# Examples of Attacks 
+
+## Replay Attacks
+
+## Denial of Service Attacks
+
+
+## Sniffing 
+
+Sniffing is one of the most common forms of RF attacks. Since there is no way of physically hidding an RF transmission , any transmission which does not use some form of encryption , hopping or scrambling faces the threat of being monitored by an unauthorised thirdparty .  
+
+## Man in the Middle 
