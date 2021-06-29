@@ -179,8 +179,24 @@ To analysise the receive file we used gnu radio to create a sketch that would de
 
 ## Encrpytion 
 
-## Hopping
+## Frequency Hopping Spread Spectrum (FHSS)
 
+One of the early adoptors of frequency hopping spread spectrum are for military use. It works by constantly changing between the carrier frequency and other pre programmed frequencies . These changes are done by a code plugin which is known both tohe receiver and transmitter . FHSS is very useful in trying to avoid interference to other signals , enable Code-Division multiple access which allows communication of multiple signals through one entity and prevent eavesdropping . 
+
+By dividing hte available band space into smaller bands or channels signals hop between them in a predetermined fashion. If there is interferance at a specific frequency it will only affect the signal during a short interval. 
+
+There are three main advantages of using FHSS compared to using a fixed frequency:
+
+1. Jamming is difficult to accomplish by a malicious third party if the pattern is unknown 
+2. The signals are difficult to intercept if the pattern is uknown
+3. Since the signal keeps changing frequency it is resistant to narrowband intererence from other sources of transmittion 
+4. FHSS allows multiple devices to transmit on the same frequency 
+
+The main consumer devices that use FHSS are devices that use the 2.4 Ghz and 5.8 Ghz bands. One of its main challenges is syncronising the transmitter and receiver. One of the most common approaches to this is to have the transmitter use all the allocated channels at a fixed time sequence allowing for the receiving device to detect the carrier signal by switching randomly between channels. Furthermore , once the signal is detected it checks if its a valid signal sometimes using a checksum for checking the integrity of the packet and to confirm the indentity of the device. They devices can also use fixed Frequency hopping pattens using a set of tables , thus allowing the devices to syncronise using a specific pre allocated table. 
+
+[cite](Principles of Spread-Spectrum Communication Systems)
+
+### 
 
 
 ## Scrambling 
