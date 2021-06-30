@@ -178,6 +178,14 @@ To analysise the receive file we used gnu radio to create a sketch that would de
 
 
 ## Encrpytion 
+Encryption is used in a wide range of applications even on radio frequency transmissions . One of the most used encryption methods is AES256 which is a symmetric encryption model . 
+
+AES (Advanced Encryption Standard) is a symmetric encryption algorithm that uses different key sizes of 128/192/256 in 128 blocks. Symmetric key encryption uses a private key to encrypt and decrypt data between two or more devices . Since all devices that what to decrypt the data need to have the same private key there is always a risk that the key could be efiltrated to the malicious actors epsecially in large networks. Thus using asymmetric key encryption was created to solve this problem . Instead of using the same key to encrypt and decrypt , we use a private key and a public key . The public key is shared with everyone , while the privte key is used to maintain its function to encrypt condidential data and only allows the owner to access the data. This does come at a disadvatage as is comes with an overhead and required more processing time and resources something exeedingly sparse on low-end devices such as sensors and IoT devices. This is why even though AES is usin a Symmetric Key Encryption standard, due to its low resource requirments it able to work on IoT devices. 
+
+[1](Zakir   M   and   Sarker   H.   A cost   effectivesymmetric key cryptographic  algorithm  for  small  amount  of  data. Proceedingsof theIEEE Int. Multitopic Conf., 2005, pp. 1–)
+
+[2](F.  Information.  Announcing  the  Advanced  Encryption  Standard (AES). 2001.)
+
 
 ## Frequency Hopping Spread Spectrum (FHSS)
 
