@@ -152,7 +152,7 @@ Attenuation decreases the efficiency of a transmitted electrical signal due the 
 2. Assumes Zigbee devices has two antennas, but in reality will not work on devices using only one. 
 3. Need extra device to actually test for interferance and try to avoid it .
    
-## A Database for the Radio Frequency Fingerprintingof Bluetooth Devices
+## A Database for the Radio Frequency Fingerprinting of Bluetooth Devices
 
 Very interesting paper but requires very specilied hardware to actually function 250Msps is very high 
 
@@ -177,7 +177,7 @@ To analysise the receive file we used gnu radio to create a sketch that would de
 # Radio Frequency Protection Techniques 
 
 
-## Encrpytion 
+## Encryption 
 Encryption is used in a wide range of applications even on radio frequency transmissions . One of the most used encryption methods is AES256 which is a symmetric encryption model . 
 
 AES (Advanced Encryption Standard) is a symmetric encryption algorithm that uses different key sizes of 128/192/256 in 128 blocks. Symmetric key encryption uses a private key to encrypt and decrypt data between two or more devices . Since all devices that what to decrypt the data need to have the same private key there is always a risk that the key could be efiltrated to the malicious actors epsecially in large networks. Thus using asymmetric key encryption was created to solve this problem . Instead of using the same key to encrypt and decrypt , we use a private key and a public key . The public key is shared with everyone , while the privte key is used to maintain its function to encrypt condidential data and only allows the owner to access the data. This does come at a disadvatage as is comes with an overhead and required more processing time and resources something exeedingly sparse on low-end devices such as sensors and IoT devices. This is why even though AES is usin a Symmetric Key Encryption standard, due to its low resource requirments it able to work on IoT devices. 
@@ -240,3 +240,11 @@ On its own scrambling is effectivly weak and only stops the weakest of malicious
 Sniffing is one of the most common forms of RF attacks. Since there is no way of physically hidding an RF transmission , any transmission which does not use some form of encryption , hopping or scrambling faces the threat of being monitored by an unauthorised thirdparty .  
 
 ## Man in the Middle 
+
+A man in the middle attack is perfomed by a malicious third party by eavesdropping between two or more devices which are communicating with each other. Usually the attcker will try and mask themselves as the receiving or transmitting device that the other device has established a connection to. In doing so it allows the malicious threat actor to sniff and analyse the victims transmittion without them knowing and also send back malformed packets which can be used to excecute commands remotly . These can be in the form of forged ssl certificates , authenitication keys for establishing secure connections or rogue wifi/zigbee/bluetooth devices which try to take control of a victims device. One of the first instances of a man in the middle was the decoding of the German Military's radio communication done by the Royal British Intelligence during world war 2. This was done using the Enigma machine which was used to decode the "encrypted" form of communication done by the German army.
+
+Man in the Middle(MITM) attack usually happen on the communication layer . One of the most common forms of MITM attacks are spoofing attacks where the attacker takes on the identity of an authentic device trying to lure in the victim and steal their data. 
+
+
+[cite](MAN-IN-THE-MIDDLE-ATTACK: UNDERSTANDINGINSIMPLEWORDS)
+[cite](W. Kozaczuk,  1984)
