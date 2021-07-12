@@ -248,3 +248,39 @@ Man in the Middle(MITM) attack usually happen on the communication layer . One o
 
 [cite](MAN-IN-THE-MIDDLE-ATTACK: UNDERSTANDINGINSIMPLEWORDS)
 [cite](W. Kozaczuk,  1984)
+
+
+
+# Testing 
+
+## Belkin NestCAm hd
+
+The Belking Nestcam HD (insert Information here)
+
+By using sparrow wifi in conjuction with our hackrf we deduced that the Belking NEtstcam was operating at 2.437 Ghz (Channel 6) , we could also monitor any clients that connected to the device or atleast initiated a connection.
+
+Using Sparrow Wifi we managed to use its inbuild deauthentication funciton which uses both the hackRF and the computers wifi adaptor. This produced valid results and disabled our devices from connecting to the camera directly . If any of the devices had been connected from before it would kick them off the network and disallow them from connecting back again . 
+
+
+Furthermore , we also used the hackRf on its own. By first moniting the frequency for IMCP Packets which we sent using our phone. Once we captured the packets we retransmitted the packets using the hackrf on the same frequency. This resulted in spikes latency from the phone to the the camera but no packet loss. This could be due to the following reasons:
+1. The hackrf is does not transmit at a bandwidth large enough to cover the whole channel on its own. Even though the nest cam does transmit using only 20Mhz bandwidth , it is likely stronger than the signal being sent by the HackRF thus overpowering it.
+2. The low power transmitted by the hackrf is not enough to completly overshadow the transmition of the Nestcam.
+3. Wifi switches between modulation types there for if we are jamming using only one form of modulaiton we might only temporalily manage to cause some disruption.
+   
+``
+hackrf_transfer -r test.bin -f 2437000000 -s 20000000 -l 40
+``
+
+``
+hackrf_transfer -t test.bin -f 2437000000 -s 20000000 -x 47
+``
+
+
+What we can take away from this is that we could possibly cause distruption of service by using a higher gain antenna and much stronger amplificaiton of the signal. This would possibly distrupt the signal enough to cause substantial packet loss . In doing so , we could possibly attack the device from a larger distance which would make it almost undetectable without specialist radio equipment . More specifically some form of triagulation would be necessary to detect the diraction of the signal .
+
+
+Further testing has been done by also sending IMCP packets on a harmonic frequency of 1.2185 Ghz which has a second harmonic of 2.437 Ghz .  Using the same method as above but just changing the frequency of transmission we observed that there a small increase in latency but not very substantial . This could be due to many factors which makes it an unrealiable result. 
+
+# NEST
+
+
