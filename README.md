@@ -3,9 +3,9 @@
 this
 
 # Introduction
-With the advancment in internet technology in the last 30 years , a new market of devices has emerged that combine the use of the internet and sensors to exchange information between thm in a meaningful way. These devices are called Internet of Things or in short IoT . The mass marketing and adoption of these devices has made easily available to many people which implement them in their home without proper infustractior with many of them being vulnerable to low level attacks. There have been studies and testing done on IoT devices in regards to network penetration testing but there is a lack of research in the field of Radio Frequency. The increase in IoT device attacks has surge drastically in the past few years , specifically in 2019 there was a record of 2.9 Billion attacks collected by honey pots on IoT devices. That was a 300% increase in attacks in comparison to the previous year where there where only 819 Million attacks.
+With the advancement in internet technology in the last 30 years , a new market of devices has emerged that combine the use of the internet and sensors to exchange information between them in a meaningful way. These devices are called Internet of Things or in short IoT . The mass marketing and adoption of these devices has made easily available to many people which implement them in their home without proper infustractior with many of them being vulnerable to low level attacks. There have been studies and testing done on IoT devices in regards to network penetration testing but there is a lack of research in the field of Radio Frequency. The increase in IoT device attacks has surge drastically in the past few years , specifically in 2019 there was a record of 2.9 Billion attacks collected by honey pots on IoT devices. That was a 300% increase in attacks in comparison to the previous year where there where only 819 Million attacks.
 
-One of the major attacks which have compromised many Zigbee based IoT devices is the Zigbee Worm attack which exploits hardcoded symmetric encryption keys in the Zigbee protocol that allow the worm to take control of the devices . This then allows it to spread to other nearby zigbee devices allowing for full control of the network . This can be done as far as 400 meters away which makes it even more difficult to track and trace.
+One of the major attacks which have compromised many Zigbee based IoT devices is the Zigbee Worm attack which exploits hard-coded symmetric encryption keys in the Zigbee protocol that allow the worm to take control of the devices . This then allows it to spread to other nearby zigbee devices allowing for full control of the network . This can be done as far as 400 meters away which makes it even more difficult to track and trace.
 
 
 
@@ -38,14 +38,14 @@ The Zigbee protocol is a IOT specific protocol used for the transmission of data
 
 https://www.sciencedirect.com/topics/engineering/zigbee-protocol
 
-### Zigbee infastracture
+### Zigbee infrastructure
 
-The structure of the Zigbee network is consists of three main devices. The coordinator , Router and End Device . A zigbee network cannot function without a coordinator as is bridges the device with the network . The coordinator is in charge of storing and the information sent by the end device while the router with retransmit the data to the appropriate device .
+The structure of the Zigbee network is consists of three main devices. The coordinator , Router and End Device . A zigbee network cannot function without a coordinator as is bridges the device with the network . The coordinator is in charge of storing and the information sent by the end device while the router with re transmit the data to the appropriate device .
 
 ## Bluetooth
 
-Bluetooth is a shortrange low power mode for transfering data between two devices. It is usually used to sync between devices in a mesh network, send files between devices , stream music etc. It operates on the 2.4Ghz portion of the spectrum utilising 79 channels of 1mhz bandwidth each. Bluetooth network operates using a frquency hopping to minimise intereference to other devices and try to mitigate any potential impact it might have to other devices. When two devices connect to each other using bluetooth they initiate a handshake signal which usually requires authorisation of both parties with some sort of pop up notification or by entering a one time password. Bluetooth devices are organised a star topology meaning that there is one master server which sends data to multiple slave nodes. For example a master server could be a phone and the slaves are the wireless earphones or speakers.
-A bluetooth packet is made up of three parts :
+Bluetooth is a short range low power mode for transferring data between two devices. It is usually used to sync between devices in a mesh network, send files between devices , stream music etc. It operates on the 2.4Ghz portion of the spectrum utilizing 79 channels of 1mhz bandwidth each. Bluetooth network operates using a frequency hopping to minimize interference to other devices and try to mitigate any potential impact it might have to other devices. When two devices connect to each other using Bluetooth they initiate a handshake signal which usually requires authorization of both parties with some sort of pop up notification or by entering a one time password. Bluetooth devices are organized a star topology meaning that there is one master server which sends data to multiple slave nodes. For example a master server could be a phone and the slaves are the wireless earphones or speakers.
+A Bluetooth packet is made up of three parts :
 
 1. Access Code
 2. Packet Header
@@ -53,7 +53,7 @@ A bluetooth packet is made up of three parts :
 
 ![alt text](https://www.technologyuk.net/telecommunications/communication-technologies/images/bluetooth_packet_format.gif)
 
-This allows the protocol to work either Syncronous mode for voice calls or Asyncronous Mode for data transfer.
+This allows the protocol to work either Synchronous mode for voice calls or Asynchronous Mode for data transfer.
 
 https://www.scientificamerican.com/article/experts-how-does-bluetooth-work/
 
@@ -62,7 +62,7 @@ https://ieeexplore.ieee.org/abstract/document/824570?casa_token=dUcTveas6GkAAAAA
 
 ### Bluetooth Controller
 
-The Bluetooth controller is in charge of inplimenting the physical layer (Layer 1) of bluetooth which is made up of the radio , baseband and link managment layer. It establishes the initial communication with the destination device using the Host Controller Interface . The link managment layer is in charge of creating that initial connection between two devices in turn use the baseband layer to create an access control system through the radio link layer . 
+The Bluetooth controller is in charge of implementing the physical layer (Layer 1) of Bluetooth which is made up of the radio , base band and link management layer. It establishes the initial communication with the destination device using the Host Controller Interface . The link management layer is in charge of creating that initial connection between two devices in turn use the base band layer to create an access control system through the radio link layer . 
 
 
 "Multi-level Bluetooth Intrusion Detection System" (cite)
@@ -70,19 +70,19 @@ The Bluetooth controller is in charge of inplimenting the physical layer (Layer 
 
 ### Host Controller Interface (HCI)
 
-The HCI layer is a mediator between the controller and host. The host uses the host controller interface to establish a link between it and the bluetooth controller .  
+The HCI layer is a mediator between the controller and host. The host uses the host controller interface to establish a link between it and the Bluetooth controller .  
 
 "Multi-level Bluetooth Intrusion Detection System" (cite)
 
 ### Bluetooth Host 
-The Blutooth Host houses the bluetooth protocols logical stack  components which allow the bluetooth protocol to be used with different applications .
+The Bluetooth Host houses the Bluetooth protocols logical stack  components which allow the Bluetooth protocol to be used with different applications .
 
 "Multi-level Bluetooth Intrusion Detection System" (cite)
 
 
 ## Harmonics
 
-Every electornic device which utilises Radio frequencies for communication and operation such as wifi , zigbee , lora etc.. are prone to harmonic frequecy emission . This is one of the fundamental properties of electromagnetic radiation . Electronic devices are under heavy regulation from bodies like the FCC which are in charge of reducing and controlling the behaiviour of these emissions .
+Every electronic device which utilizes Radio frequencies for communication and operation such as WiFi , zigbee , lora etc.. are prone to harmonic frequency emission . This is one of the fundamental properties of electromagnetic radiation . Electronic devices are under heavy regulation from bodies like the FCC which are in charge of reducing and controlling the behavior of these emissions .
 
 | Harmonic | No. of waves | No. of Nodes | No. of anti-Nodes | Length vs Wavelength Relationship |
 | -------- | ------------ | ------------ | ----------------- | --------------------------------- |
@@ -94,13 +94,13 @@ L=n/2 (lambda)
 
 λ [wavelength] = c [speed of light] / ƒ [frequency]
 
-When a wave oscllates it will produces harmonic waves with a reduction in bandwidth everytime which results in an oscillation on a different frequency . In our case this could allow for attacks to be carried out by using even less "sophisticated" equipment by transmitting on lower freuquencies.
+When a wave oscillates it will produces harmonic waves with a reduction in bandwidth every time which results in an oscillation on a different frequency . In our case this could allow for attacks to be carried out by using even less "sophisticated" equipment by transmitting on lower frequencies.
 
-Harmonics can cause unintended interferece to other devices operating on the frequency which the hormonic will oscillate. As we get closer to the third harmonic and the wavelengh increases it will increase the noise floorof the electrical signal which in turn can cause "jamming" of legitimate signal reaching their intended receivers . Furthermore , they can cause the capacitance level of power factor capacitors to flactuate and inductance of the power supply to become unstable causing the device or neighbouring devices to behave irregularly.
+Harmonics can cause unintended interference to other devices operating on the frequency which the harmonic will oscillate. As we get closer to the third harmonic and the wavelength increases it will increase the noise floor of the electrical signal which in turn can cause "jamming" of legitimate signal reaching their intended receivers . Furthermore , they can cause the capacitance level of power factor capacitors to flactuate and inductance of the power supply to become unstable causing the device or neighbouring devices to behave irregularly.
 
-Harmonic Spurious emission are also a huge issue in electronic devices as they produce unwanted oscillationd close to the fundumental frquency aswell as harmonic frequencies which can cause inteference . For example a device transmitting at exactly 433mhz with a bandwidth of 25 khz will also bleed onto other frequencies well over its bandwidth without proper filtering . This is especially prominent in dual side mode modulations such as Frequency Modulation (FM), Amplitude Modulation (AM) , Dual Side Band (DSB) ,Phase Modulation (PM).
-Protocols like Wifi use a combination of Binary Phase Shift keying (BPSK) and Quandrature Phase Shift Keying(QPSK). The protocol switches between modulation types to optimise transmission rate and error correcton .
-Many of these spurious emissions are generated by Low Noise Amplifier embeded in the devices which are used the amplify the low powered signal transmitted from the device. Using this type of amplification causes not only the desired transmition signal to be amplfied but also any hamonics or "noise" it generates by:
+Harmonic Spurious emission are also a huge issue in electronic devices as they produce unwanted oscillations close to the fundamental frequency as-well as harmonic frequencies which can cause interference . For example a device transmitting at exactly 433mhz with a bandwidth of 25 khz will also bleed onto other frequencies well over its bandwidth without proper filtering . This is especially prominent in dual side mode modulations such as Frequency Modulation (FM), Amplitude Modulation (AM) , Dual Side Band (DSB) ,Phase Modulation (PM).
+Protocols like Wifi use a combination of Binary Phase Shift keying (BPSK) and Quandrature Phase Shift Keying(QPSK). The protocol switches between modulation types to optimise transmission rate and error correction .
+Many of these spurious emissions are generated by Low Noise Amplifier embedded in the devices which are used the amplify the low powered signal transmitted from the device. Using this type of amplification causes not only the desired transmission signal to be amplified but also any harmonics or "noise" it generates by:
 
 "INSERT EQUATION HERE"
 
@@ -121,7 +121,7 @@ https://www.tjprc.org/publishpapers/2-15-1476517420-6.%20Electrical%20-%20IJEEER
 ![GNU RADIO](https://www.gnuradio.org/imgs/gnuradio_logo_glyphs_as_paths.svg)
 
 
-GNU RADIO is a open-source software development platform used to create virtual signal processing block which can be implemented with software defined radio such as the Hackrf. By using the platform is allows low cost rf radio exquipment to be "equiped" virtually with decoders , filters , processing blocks to encode and decode data in the RF spectrum. 
+GNU RADIO is a open-source software development platform used to create virtual signal processing block which can be implemented with software defined radio such as the Hackrf. By using the platform is allows low cost rf radio equipment to be "equipped" virtually with decoders , filters , processing blocks to encode and decode data in the RF spectrum. 
 Using Gnu Radio allows us to make complex RF signal simulations without the need for expensive hardware thus reducing the cost of testing equipment.
 
 ## Attenuation 
@@ -129,42 +129,42 @@ https://www.dataloggerinc.com/wp-content/uploads/2016/11/16_Basics_of_signal_att
 
 https://www.electronics-notes.com/articles/radio/rf-attenuators/what-is-an-rf-attenuator-types.php
 
-Attenuation is the degradation of signal stregth during transmission, this is causes inteferance to devices close to the transmitting device which might cause it to loss data. Attenuation is reprenseted using decibels(dB). Decibels are the logarithms amplification by a factor of 10 by an input signal and devided by the output .
+Attenuation is the degradation of signal strength during transmission, this is causes interference to devices close to the transmitting device which might cause it to loss data. Attenuation is represented using decibels(dB). Decibels are the logarithms amplification by a factor of 10 by an input signal and divided by the output .
 
 ![FORMULA](https://wikimedia.org/api/rest_v1/media/math/render/svg/db593d0adac70afe8299b6e46a122719a48fc0a9)
 
-Attenuation decreases the efficiency of a transmitted electrical signal due the absorbsion or scattering of the photons. One of the main benefits of using 2.4ghz for protocols like wifi and bluetooth is the lack of inteference due to weather conditions.
+Attenuation decreases the efficiency of a transmitted electrical signal due the absorption or scattering of the photons. One of the main benefits of using 2.4ghz for protocols like WiFi and Bluetooth is the lack of interference due to weather conditions.
 
 
 ## Notes on "Investigating Radio Frequency Vulnerabilities in IoT(Using a HackRF)" 
 
 1. Using a non resonant antenna for 2.4ghz will cause high Standing wave ratio which will result in loss of packets , loss of power and possible damage to electronic components of the HackRF. Even at 1.1Ghz the closest resonant harmonic frequency which is 2.2ghz which is still very far away from 2.4GHz . It is offset by 200 mhz . 
 
-## Securing ZigBee Communications Against ConstantJamming Attack Using Neural Network
+## Securing ZigBee Communications Against Constant Jamming Attack Using Neural Network
 
-1. ZigBee receiver suffers from larger than 90% packeterror rate.
-2. Uses spectrum spreading to stop interferance but in reality fails.
-3. Using greater that -1.6 dB of noise will interupt the signal. 
+1. ZigBee receiver suffers from larger than 90% packet error rate.
+2. Uses spectrum spreading to stop interference but in reality fails.
+3. Using greater that -1.6 dB of noise will interrupt the signal. 
 
 ### Criticism 
 
-1. Makes the assumption that interference cancelation just using more power in the case of "wifi" . 
+1. Makes the assumption that interference cancellation just using more power in the case of "wifi" . 
 2. Assumes Zigbee devices has two antennas, but in reality will not work on devices using only one. 
-3. Need extra device to actually test for interferance and try to avoid it .
+3. Need extra device to actually test for interference and try to avoid it .
    
 ## A Database for the Radio Frequency Fingerprinting of Bluetooth Devices
 
-Very interesting paper but requires very specilied hardware to actually function 250Msps is very high 
+Very interesting paper but requires very specified hardware to actually function 250Msps is very high 
 
-## A Technical Review of Wireless security for theInternet of things: Software Defined Radioperspective
-Intersting ideas for attacks but most of them can be achieved with cheap SDR hardware like the RTL_SDR , NooElec smart sdr.
+## A Technical Review of Wireless security for the Internet of things: Software Defined Radio perspective
+Interesting ideas for attacks but most of them can be achieved with cheap SDR hardware like the RTL_SDR , NooElec smart sdr.
 Rebroadcasting ACARS packets is nothing new or difficult to do. It can be done easily with a Baofeng UV-5R and a cheap arduino or raspberry pi .
 
 
 ## GNU RADIO ZIGBEE sketches
 ### Receiving 
 
-Using the hackrf we set it to receive at a frequency "X" wiht a sample rate of 5 Msps and a IF gain of 16db and Baseband gain of 16db. We then resammple the signal through a low pass filter to remove any unwanted noise. We save the capture data as a binary file using File Sink. 
+Using the hackrf we set it to receive at a frequency "X" wiht a sample rate of 5 Msps and a IF gain of 16db and Baseband gain of 16db. We then resample the signal through a low pass filter to remove any unwanted noise. We save the capture data as a binary file using File Sink. 
 
 ### Analysing 
 
@@ -191,16 +191,16 @@ AES (Advanced Encryption Standard) is a symmetric encryption algorithm that uses
 
 One of the early adoptors of frequency hopping spread spectrum are for military use. It works by constantly changing between the carrier frequency and other pre programmed frequencies . These changes are done by a code plugin which is known both tohe receiver and transmitter . FHSS is very useful in trying to avoid interference to other signals , enable Code-Division multiple access which allows communication of multiple signals through one entity and prevent eavesdropping . 
 
-By dividing hte available band space into smaller bands or channels signals hop between them in a predetermined fashion. If there is interferance at a specific frequency it will only affect the signal during a short interval. 
+By dividing hte available band space into smaller bands or channels signals hop between them in a predetermined fashion. If there is interference at a specific frequency it will only affect the signal during a short interval. 
 
 There are three main advantages of using FHSS compared to using a fixed frequency:
 
 1. Jamming is difficult to accomplish by a malicious third party if the pattern is unknown 
-2. The signals are difficult to intercept if the pattern is uknown
-3. Since the signal keeps changing frequency it is resistant to narrowband intererence from other sources of transmittion 
+2. The signals are difficult to intercept if the pattern is unknown
+3. Since the signal keeps changing frequency it is resistant to narrow-band interference from other sources of transmittion 
 4. FHSS allows multiple devices to transmit on the same frequency 
 
-The main consumer devices that use FHSS are devices that use the 2.4 Ghz and 5.8 Ghz bands. One of its main challenges is syncronising the transmitter and receiver. One of the most common approaches to this is to have the transmitter use all the allocated channels at a fixed time sequence allowing for the receiving device to detect the carrier signal by switching randomly between channels. Furthermore , once the signal is detected it checks if its a valid signal sometimes using a checksum for checking the integrity of the packet and to confirm the indentity of the device. They devices can also use fixed Frequency hopping pattens using a set of tables , thus allowing the devices to syncronise using a specific pre allocated table. 
+The main consumer devices that use FHSS are devices that use the 2.4 Ghz and 5.8 Ghz bands. One of its main challenges is synchronizing the transmitter and receiver. One of the most common approaches to this is to have the transmitter use all the allocated channels at a fixed time sequence allowing for the receiving device to detect the carrier signal by switching randomly between channels. Furthermore , once the signal is detected it checks if its a valid signal sometimes using a checksum for checking the integrity of the packet and to confirm the identity of the device. They devices can also use fixed Frequency hopping patterns using a set of tables , thus allowing the devices to synchronize using a specific pre allocated table. 
 
 [cite](Principles of Spread-Spectrum Communication Systems)
 
@@ -208,9 +208,9 @@ The main consumer devices that use FHSS are devices that use the 2.4 Ghz and 5.8
 
 
 ## Scrambling 
-The oldest method of obsuscating the content of RF transmittions is scrambling. This is done using a set frequency value to invert the frequency of the input signal which creates a "clone" of the signal on a different frequency range. In other words , the signal is transposed to a different range and can only be decoded by a device using te same frequency offset and settings. Compared to other methods of protections , it is the most primitive as it can be easily broken and descrambled. Even more complex scrambling methods like split-band inversion are also prone to desrambling.
+The oldest method of obfuscating the content of RF transmissions is scrambling. This is done using a set frequency value to invert the frequency of the input signal which creates a "clone" of the signal on a different frequency range. In other words , the signal is transposed to a different range and can only be decoded by a device using te same frequency offset and settings. Compared to other methods of protections , it is the most primitive as it can be easily broken and de scrambled. Even more complex scrambling methods like split-band inversion are also prone to de-scrambling.
 
-Decrambling voice communication for example, can be done by recording the signal we want to descramble using a program like SDR# and  SDR capable of listenig on the specified frequency. After recording the IQ data we play it back using the same software and look for the inverse modulation. Depending on the modulation we can use either Upper or Lower Side band modulation to demodulate one of the two inverted modulations. 
+De-scrambling voice communication for example, can be done by recording the signal we want to de-scramble using a program like SDR# and  SDR capable of listenig on the specified frequency. After recording the IQ data we play it back using the same software and look for the inverse modulation. Depending on the modulation we can use either Upper or Lower Side band modulation to demodulate one of the two inverted modulations. 
 
 
 [Frequency scrambler](https://www.vocal.com/secure-communication/frequency-scrambler-frequency-inversion/)
@@ -223,9 +223,9 @@ Split-Band inversion works by adding one more carrier frequency which devides th
 
 #### Scrambling conclusion
 
-There are automated programs that do this for us one example is deinvert by Oona Raisanen which can automatically monitor a frequency using an RTL-SDR and do the whole processes without any fidling around. This also works with Split-Band Inversion but at a lower success rate. 
+There are automated programs that do this for us one example is deinvert by Oona Raisanen which can automatically monitor a frequency using an RTL-SDR and do the whole processes without any fiddling around. This also works with Split-Band Inversion but at a lower success rate. 
 [Deinvert](https://github.com/windytan/deinvert)
-On its own scrambling is effectivly weak and only stops the weakest of malicious actors from listening and sniffing data. It needs to be combined with other forms of security.
+On its own scrambling is effectively weak and only stops the weakest of malicious actors from listening and sniffing data. It needs to be combined with other forms of security.
 
 
 # Examples of Attacks 
@@ -237,11 +237,11 @@ On its own scrambling is effectivly weak and only stops the weakest of malicious
 
 ## Sniffing 
 
-Sniffing is one of the most common forms of RF attacks. Since there is no way of physically hidding an RF transmission , any transmission which does not use some form of encryption , hopping or scrambling faces the threat of being monitored by an unauthorised thirdparty .  
+Sniffing is one of the most common forms of RF attacks. Since there is no way of physically hiding an RF transmission , any transmission which does not use some form of encryption , hopping or scrambling faces the threat of being monitored by an unauthorized third party .  
 
 ## Man in the Middle 
 
-A man in the middle attack is perfomed by a malicious third party by eavesdropping between two or more devices which are communicating with each other. Usually the attcker will try and mask themselves as the receiving or transmitting device that the other device has established a connection to. In doing so it allows the malicious threat actor to sniff and analyse the victims transmittion without them knowing and also send back malformed packets which can be used to excecute commands remotly . These can be in the form of forged ssl certificates , authenitication keys for establishing secure connections or rogue wifi/zigbee/bluetooth devices which try to take control of a victims device. One of the first instances of a man in the middle was the decoding of the German Military's radio communication done by the Royal British Intelligence during world war 2. This was done using the Enigma machine which was used to decode the "encrypted" form of communication done by the German army.
+A man in the middle attack is performed by a malicious third party by eavesdropping between two or more devices which are communicating with each other. Usually the attacker will try and mask themselves as the receiving or transmitting device that the other device has established a connection to. In doing so it allows the malicious threat actor to sniff and analyze the victims transmission without them knowing and also send back malformed packets which can be used to execute commands remotely . These can be in the form of forged ssl certificates , authentication keys for establishing secure connections or rogue wifi/zigbee/bluetooth devices which try to take control of a victims device. One of the first instances of a man in the middle was the decoding of the German Military's radio communication done by the Royal British Intelligence during world war 2. This was done using the Enigma machine which was used to decode the "encrypted" form of communication done by the German army.
 
 Man in the Middle(MITM) attack usually happen on the communication layer . One of the most common forms of MITM attacks are spoofing attacks where the attacker takes on the identity of an authentic device trying to lure in the victim and steal their data. 
 
@@ -249,25 +249,25 @@ Man in the Middle(MITM) attack usually happen on the communication layer . One o
 [cite](MAN-IN-THE-MIDDLE-ATTACK: UNDERSTANDINGINSIMPLEWORDS)
 [cite](W. Kozaczuk,  1984)
 
-
-
+# Methodology 
+#
 # Testing 
 
 ## Belkin NestCAm hd
 
 The Belking Nestcam HD (insert Information here)
 
-By using sparrow wifi in conjuction with our hackrf we deduced that the Belking NEtstcam was operating at 2.437 Ghz (Channel 6) , we could also monitor any clients that connected to the device or atleast initiated a connection.
+By using sparrow WiFi in conjunction with our hackrf we deduced that the Belking NEtstcam was operating at 2.437 Ghz (Channel 6) , we could also monitor any clients that connected to the device or at least initiated a connection.
 
-Using Sparrow Wifi we managed to use its inbuild deauthentication funciton which uses both the hackRF and the computers wifi adaptor. This produced valid results and disabled our devices from connecting to the camera directly . If any of the devices had been connected from before it would kick them off the network and disallow them from connecting back again . 
+Using Sparrow WiFi we managed to use its inbuilt de-authentication function which uses both the hackRF and the computers wifi adapter. This produced valid results and disabled our devices from connecting to the camera directly . If any of the devices had been connected from before it would kick them off the network and disallow them from connecting back again . 
 
 
-Furthermore , we also used the hackRf on its own. By first moniting the frequency for IMCP Packets which we sent using our phone. Once we captured the packets we retransmitted the packets using the hackrf on the same frequency. This resulted in spikes latency from the phone to the the camera but no packet loss. This could be due to the following reasons:
+Furthermore , we also used the hackRf on its own. By first moniting the frequency for IMCP Packets which we sent using our phone. Once we captured the packets we re transmitted the packets using the hackrf on the same frequency. This resulted in spikes latency from the phone to the the camera but no packet loss. This could be due to the following reasons:
 1. The hackrf is does not transmit at a bandwidth large enough to cover the whole channel on its own. Even though the nest cam does transmit using only 20Mhz bandwidth , it is likely stronger than the signal being sent by the HackRF thus overpowering it.
-2. The low power transmitted by the hackrf is not enough to completly overshadow the transmition of the Nestcam.
-3. Wifi switches between modulation types there for if we are jamming using only one form of modulaiton we might only temporalily manage to cause some disruption.
+2. The low power transmitted by the hackrf is not enough to completely overshadow the transmission of the Nestcam.
+3. Wifi switches between modulation types there for if we are jamming using only one form of modulation we might only temporally manage to cause some disruption.
 <<<<<<< HEAD
-4. Even when using Universal Radio Hacker we where unable to decode any packets primarily becuase of the lack of bandwidth.
+4. Even when using Universal Radio Hacker we where unable to decode any packets primarily because of the lack of bandwidth.
 =======
    
 ``
@@ -279,15 +279,21 @@ hackrf_transfer -t test.bin -f 2437000000 -s 20000000 -x 47
 ``
 
 
-What we can take away from this is that we could possibly cause distruption of service by using a higher gain antenna and much stronger amplificaiton of the signal. This would possibly distrupt the signal enough to cause substantial packet loss . In doing so , we could possibly attack the device from a larger distance which would make it almost undetectable without specialist radio equipment . More specifically some form of triagulation would be necessary to detect the diraction of the signal .
+What we can take away from this is that we could possibly cause disruption of service by using a higher gain antenna and much stronger amplification of the signal. This would possibly disrupt the signal enough to cause substantial packet loss . In doing so , we could possibly attack the device from a larger distance which would make it almost undetectable without specialist radio equipment . More specifically some form of triangulation would be necessary to detect the direction of the signal .
 
 
 Further testing has been done by also sending IMCP packets on a harmonic frequency of 1.2185 Ghz which has a second harmonic of 2.437 Ghz .  Using the same method as above but just changing the frequency of transmission we observed that there a small increase in latency but not very substantial . This could be due to many factors which makes it an unrealiable result. 
 
-# NEST
-<<<<<<< HEAD
-The NEst smoke alarm (insert info) uses both bluetooth and wifi to connect to the internet and a nest hub.
-By using sparrow wifi we could see that the device was using channel 6 for Wifi . We where succesfull in deauthenticating the device using deauthetication packets from both the HackRF and the Wifi adaptor. Using only the hackrf we could see a small rise in ping . The same methodology as the previous testing was done . 
+## NEST
+
+The Nest smoke alarm (insert info) uses both Bluetooth and wifi to connect to the internet and a nest hub. It uses Bluetooth 4.0 with a max transfer rate of 1mbps. It uses a modulation type of GFSK , operating between 2.402 ~ 2.480 Ghz. The channel spacing used by the device is 2 Mhz which makes it ideal for the hackrf to sniff at least one channel. Looking on the inside of the device we can see that it use a meandering mono-pole antenna with a gain of 0.29dBi and a maximum transmit power of 0.995 mW. The internal coax connections are done using a Sucoflex 104 which is a low loss , high stability cable with shielding acceptable up to 26.5ghz.
+
+https://eu.mouser.com/new/huber-suhner/huber-suhner-sucoflex-104-microwave-cable-assemblies/
+
+
+https://fccid.io/ZQAS30/Test-Report/Test-Report-BT-LE-2648525
+
+By using sparrow wifi we could see that the device was using channel 6 for WiFi . We where succesfull in de authenticating the device using deauthetication packets from both the HackRF and the Wifi adaptor. Using only the hackrf we could see a small rise in ping . The same methodology as the previous testing was done . 
 
 ``
 hackrf_transfer -r test.bin -f 2437000000 -s 20000000 -l 40
@@ -297,12 +303,13 @@ hackrf_transfer -r test.bin -f 2437000000 -s 20000000 -l 40
 hackrf_transfer -t test.bin -f 2437000000 -s 20000000 -x 47
 ``
 
-Further more we have also sniffed the wifi packets using our wifi adaptor in monitor mode. By analysing the packets we determind normal operation and nothing out of the ordinary was present. The only interesting result was that the device was continously sending out beaconing packets at very small intervals. 
+Further more we have also sniffed the wifi packets using our WiFi adapter in monitor mode. By analyzing the packets we determined normal operation and nothing out of the ordinary was present. The only interesting result was that the device was continuously sending out beaconing packets at very small intervals. 
 
-By using the hackrf we have also sniffed part of the bluetooth spectrum to capture the connection between the mobile phone and the Nest Device . Becuase of the lack of badwidth available on the hackrf we cannot sniff the whole Bluetooth spectrum hence we only focused on channel 37 which was the most commonly used one.
-This resulted in multiple malformed packets being received with the only "useful" packes being decoded being the broadcast packet by the NEST device.  
+By using the hackrf we have also sniffed part of the Bluetooth spectrum to capture the connection between the mobile phone and the Nest Device . Because of the lack of bandwidth available on the hackrf we cannot sniff the whole Bluetooth spectrum hence we only focused on channel 37 which was the most commonly used one.
+This resulted in multiple malformed packets being received with the only "useful" packets being decoded being the broadcast packet by the NEST device.  
 
-While sniffing the packets , there was no way for us to recieve the handshake signal which could allow us to perform a replay attack . Even using b
-=======
+While sniffing the packets , there was no way for us to receive the handshake signal which could allow us to perform a replay attack . Even using the hackrf_transfer function to save the raw data and re-transmit them back we were unable to see any effect on the device or the network it was connected to . Furthermore using a harmonic freq of 1.2185 Ghz we were able to slightly increase the latency between the device and other device but not substantial enough to cause any issues. 
 
+## Hive Hub
 
+The hive hub is a zigbee device coordinator used to connect and control multiple zigbee devices. The device it self is made up by a 
