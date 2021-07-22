@@ -105,7 +105,7 @@ class receiver(gr.top_block, Qt.QWidget):
         )
         self.osmosdr_source_0.set_time_unknown_pps(osmosdr.time_spec_t())
         self.osmosdr_source_0.set_sample_rate(5e6)
-        self.osmosdr_source_0.set_center_freq(2449900000, 0)
+        self.osmosdr_source_0.set_center_freq(2405000000, 0)
         self.osmosdr_source_0.set_freq_corr(0, 0)
         self.osmosdr_source_0.set_dc_offset_mode(0, 0)
         self.osmosdr_source_0.set_iq_balance_mode(2, 0)

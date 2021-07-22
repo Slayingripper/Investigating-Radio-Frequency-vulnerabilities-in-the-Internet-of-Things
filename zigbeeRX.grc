@@ -59,7 +59,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [880, 132.0]
+    coordinate: [856, 116.0]
     rotation: 0
     state: true
 - name: low_pass_filter_0
@@ -261,7 +261,7 @@ blocks:
     dc_offset_mode7: '0'
     dc_offset_mode8: '0'
     dc_offset_mode9: '0'
-    freq0: '2449900000'
+    freq0: '2405000000'
     freq1: 100e6
     freq10: 100e6
     freq11: 100e6
