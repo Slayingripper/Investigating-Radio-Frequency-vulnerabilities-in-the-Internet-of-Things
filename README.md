@@ -266,9 +266,8 @@ Furthermore , we also used the hackRf on its own. By first moniting the frequenc
 1. The hackrf is does not transmit at a bandwidth large enough to cover the whole channel on its own. Even though the nest cam does transmit using only 20Mhz bandwidth , it is likely stronger than the signal being sent by the HackRF thus overpowering it.
 2. The low power transmitted by the hackrf is not enough to completely overshadow the transmission of the Nestcam.
 3. Wifi switches between modulation types there for if we are jamming using only one form of modulation we might only temporally manage to cause some disruption.
-<<<<<<< HEAD
+
 4. Even when using Universal Radio Hacker we where unable to decode any packets primarily because of the lack of bandwidth.
-=======
    
 ``
 hackrf_transfer -r test.bin -f 2437000000 -s 20000000 -l 40
