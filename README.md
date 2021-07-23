@@ -311,4 +311,4 @@ While sniffing the packets , there was no way for us to receive the handshake si
 
 ## Hive Hub
 
-The hive hub is a zigbee device coordinator used to connect and control multiple zigbee devices. The device it self is made up by a 
+The hive hub is a zigbee device coordinator used to connect and control multiple zigbee devices. The device it self transmits using an RF6555 CHIP which is capable of transmitting both WIFI and Zigbee with a  maximum transmission power of 18dbm. The chip also has an integrated Low noise amplifier for greater reception and transmission . For the device to start transmitting and receiving Zigbee packets , it requires an account to be created on the Hive website [cite] , this posses a potential threat , if the Hive service would at some point become obslete it would render the device useless.
