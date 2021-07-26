@@ -312,3 +312,36 @@ While sniffing the packets , there was no way for us to receive the handshake si
 ## Hive Hub
 
 The hive hub is a zigbee device coordinator used to connect and control multiple zigbee devices. The device it self transmits using an RF6555 CHIP which is capable of transmitting both WIFI and Zigbee with a  maximum transmission power of 18dbm. The chip also has an integrated Low noise amplifier for greater reception and transmission . For the device to start transmitting and receiving Zigbee packets , it requires an account to be created on the Hive website [cite] , this posses a potential threat , if the Hive service would at some point become obslete it would render the device useless.
+
+
+## inFactory sensors
+
+inFactory sensors are widely used sensors which can be found in many weather stations. Many of these weather stations either have built in functionality to send data over the internet or use an other thirdparty device to do this for them . They usually operate on 433.920 Mhz using FSK modulation which send out packets to neighbouring monitoring devices which display the data. This data is sent using an unencrypted signal which can be decoded using the rtl_433 software. Many IoT enthusiasts have used rtl_433 to decode the data and perform analysis on the data. 
+
+To aquire our data we used rtl_433 to decode the data and perform analysis on the data. We were able to see that the data was being sent out using a frequency of 433.920 Mhz. This frequency is used by the COWP weather stations to send out data.    
+
+
+
+```
+rtl_433 -d 1 -R 91 -a 4 -A
+```
+### Attack Senario
+Many of these weather stations send data to the internet which are used by community driven services. This data is then used to create graphs and send out notifications to users. The data is then stored on the internet and can be accessed by anyone. This is a potential threat if the service becomes overun by malformed information which could render the information useless. One such service is the Citizen Weather Observer Program (COWP) which is a community driven service which provides weather data using community driver weather stations. This information is made available and used by weather services and homeland secuirity. The COWP is a great example of a service which is not only used by the community but also by the government. COWP lists on their website that they are used by over 800 different government and non-government organizations .
+
+
+
+http://wxqa.com/
+
+#### Jamming 
+
+
+#### Replay Attack
+
+#### Packet Manupulation 
+
+
+
+
+
+
+https://github.com/merbanan/rtl_433
