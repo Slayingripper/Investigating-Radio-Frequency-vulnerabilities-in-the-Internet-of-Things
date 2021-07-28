@@ -326,17 +326,19 @@ To aquire our data we used rtl_433 to decode the data and perform analysis on th
 rtl_433 -d 1 -R 91 -a 4 -A
 ```
 ### Attack Senario
-Many of these weather stations send data to the internet which are used by community driven services. This data is then used to create graphs and send out notifications to users. The data is then stored on the internet and can be accessed by anyone. This is a potential threat if the service becomes overun by malformed information which could render the information useless. One such service is the Citizen Weather Observer Program (COWP) which is a community driven service which provides weather data using community driver weather stations. This information is made available and used by weather services and homeland secuirity. The COWP is a great example of a service which is not only used by the community but also by the government. COWP lists on their website that they are used by over 800 different government and non-government organizations .
+Many of these weather stations send data to the internet which are used by community driven services. This data is then used to create graphs and send out notifications to users. The data is then stored on the internet and can be accessed by anyone. This is a potential threat if the service becomes overun by malformed information which could render the information useless. One such service is the Citizen Weather Observer Program (COWP) which is a community driven service which provides weather data using community driven weather stations. This information is made available and used by weather services and homeland secuirity. The COWP is a great example of a service which is not only used by the community but also by the government. COWP lists on their website that they are used by over 800 different government and non-government organizations .
 
 
 
 http://wxqa.com/
 
 #### Jamming 
-
+Many of the sensors are housed in thin plastic casing with little or no shielding from the elements. Furthermore , the circuit board itself has minimal protection from external RF interferance which makes it easy to Jam and break the connection bewteen the screen and the sensor. To achieve this we sent out a signal using a HackRF irrelevant of modulation mode as it would still be more powerful than the sensors internal amplifier. Although we were able to jam the connection between the HackRF and the sensor , we could take this a step further and use a handheld tranceiver and transmit a carrier wave on 433.920 with more than 1 watt , this could potentially jame multiple devices on the same frequency and at a much larger distance.
 
 #### Replay Attack
 
+
+We can easily create a replay attack 
 #### Packet Manupulation 
 
 
