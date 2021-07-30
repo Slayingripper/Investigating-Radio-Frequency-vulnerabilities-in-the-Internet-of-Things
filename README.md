@@ -232,8 +232,13 @@ On its own scrambling is effectively weak and only stops the weakest of maliciou
 
 ## Replay Attacks
 
-## Denial of Service Attacks
+Replay attacks are "simplistic" in nature as their end goal is to replay a transmitted signal to the targeted device. This could cause a device to respond to a message or command that was issued before for example, turning on and opening the garage door , turning off the light etc. These have become very common as they are easy to exectute on low-end devices such as sensors and IoT devices especially without any form of protection. Some mitigation strategies are to use rolling codes which are a type of encryption that can be used to prevent replay attacks. A rolling code works by using a hash function to create a unique code for each message. This code is then used to encrypt the message and then the hash function is used to create a unique code for each message. This is done to prevent replay attacks.
+[cite](http://conferences.sigcomm.org/sigcomm/2013/papers/srif/p61.pdf)
 
+## Denial of Service Attacks
+Denial of service Attacks are attacks that cause a device to crash or become unresponsive. They are very common in the form of flooding IMCP packets to webserver or devices to disconnect them from a network. It is one of the oldest and most common types of attacks. In the RF world it is known usually as jamming. To produce a jamming signal ,the jammer uses a signal generator to produce a continuous wave signal which is then sent to the target device. Usually a jammer will send out a stronger signal than the signal it is trying to jam effectively making the target device un-operational. In sound waves , we could cancel out the wave by transmitting an equal and  opossite wave. In doing this, we cancel out the wave and the signal is completely cancelled there for the sum of the waves would be zero. This is not the same concept in the RF world as RF uses transverse waves which to not oscillate the same way..
+
+[cite](https://ieeexplore.ieee.org/abstract/document/4132939)
 
 ## Sniffing 
 
@@ -318,13 +323,18 @@ The hive hub is a zigbee device coordinator used to connect and control multiple
 
 inFactory sensors are widely used sensors which can be found in many weather stations. Many of these weather stations either have built in functionality to send data over the internet or use an other thirdparty device to do this for them . They usually operate on 433.920 Mhz using FSK modulation which send out packets to neighbouring monitoring devices which display the data. This data is sent using an unencrypted signal which can be decoded using the rtl_433 software. Many IoT enthusiasts have used rtl_433 to decode the data and perform analysis on the data. 
 
-To aquire our data we used rtl_433 to decode the data and perform analysis on the data. We were able to see that the data was being sent out using a frequency of 433.920 Mhz. This frequency is used by the COWP weather stations to send out data.    
+To aquire our data we used rtl_433 to decode the data and perform analysis on the data. We were able to see that the data was being sent out using a frequency of 433.920 Mhz. This frequency is used by the COWP weather stations to send out data. We used the following command to decode , store the signal and later perform analysis on the data using Universal Radio Hacker. The flags used in the command are as follows:
 
-
+-d: Device number
+-R: Device ID (at specified in rtl_433 wiki)
+-a: Analyze mode 4
+-A: Pulse Analysis
+-S: Store all raw signals 
 
 ```
-rtl_433 -d 1 -R 91 -a 4 -A
+rtl_433 -d 1 -R 91 -a 4 -A -S all 
 ```
+
 ### Attack Senario
 Many of these weather stations send data to the internet which are used by community driven services. This data is then used to create graphs and send out notifications to users. The data is then stored on the internet and can be accessed by anyone. This is a potential threat if the service becomes overun by malformed information which could render the information useless. One such service is the Citizen Weather Observer Program (COWP) which is a community driven service which provides weather data using community driven weather stations. This information is made available and used by weather services and homeland secuirity. The COWP is a great example of a service which is not only used by the community but also by the government. COWP lists on their website that they are used by over 800 different government and non-government organizations .
 
