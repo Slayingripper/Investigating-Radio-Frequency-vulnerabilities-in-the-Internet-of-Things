@@ -325,11 +325,15 @@ inFactory sensors are widely used sensors which can be found in many weather sta
 
 To aquire our data we used rtl_433 to decode the data and perform analysis on the data. We were able to see that the data was being sent out using a frequency of 433.920 Mhz. This frequency is used by the COWP weather stations to send out data. We used the following command to decode , store the signal and later perform analysis on the data using Universal Radio Hacker. The flags used in the command are as follows:
 
--d: Device number
--R: Device ID (at specified in rtl_433 wiki)
--a: Analyze mode 4
--A: Pulse Analysis
--S: Store all raw signals 
+
+
+
+- -d: Device number
+- -R: Device ID (at specified in rtl_433 wiki)
+- -a: Analyze mode 4
+- -A: Pulse Analysis
+- -S: Store all raw signals 
+- 
 
 ```
 rtl_433 -d 1 -R 91 -a 4 -A -S all 
