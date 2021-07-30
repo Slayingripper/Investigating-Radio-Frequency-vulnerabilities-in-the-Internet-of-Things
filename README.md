@@ -347,3 +347,28 @@ We can easily create a replay attack
 
 
 https://github.com/merbanan/rtl_433
+
+## SONOFF SNZB-02
+
+https://fccid.io/2APN5SNZB-02
+https://www.ti.com/lit/ds/symlink/cc2530.pdf?ts=1627450920062&ref_url=https%253A%252F%252Fwww.google.ru%252F
+
+The Sonoff SNZB-02 is a small Temparture / Humidity monitor that operates using the zigbee protocol . It uses a small internal PCB antenna with a maximum power of 3mW or 4.58 dBm . This achieved using a cc2530 chip which is a very small and low power radio chip . The device uses a standard 2.4ghz RF frequency and uses a GFSK modulation which is a very low bandwidth and low power modulation . The device itself is housed in a small plastic casing with minimal shielding from other forms of RF interference . This device is very small and can be used in a small space like a room or in a small space like a room. The device itself will send out a beaconing packet alerting any receiving device of the current temprature and humidity of the area. 
+
+"insert picture here"
+
+The device sends out data using metric units while also sending telemetry for monitoring the health of the device. The SNZB-02 sends out a packet containing :
+1. **Temptrature** in Celcious with a resolution of 0.01 degrees
+2. **Humidity** in % an accuracy of 0.01 
+3. **Battery** Level from 0 to 100
+4. **Link Quality** from 0 to 100
+5. **Voltage** in milivolts  
+
+
+
+The device itself suffers from a poor design element of not having a way to turn off the device . This means that if the device is left on for too long it will continue to send out packets and consume power but also the positioning of the pcb antenna will affect the signal strength .
+
+
+As we can observe the pcb antenna is located next to the cc2530 chip on the very edge of the board. Although there is very little room for improvment of the board design we can still improve the design by moving the pcb antenna to a different side of the board or even adding an IPX connector to add a small wire antenna . This would allow us to reduce signal loss of the device but also increase its transmission range. This is importart as a lot of the devices are not able to receive signals from a distance greater than a few meters. This has the benefit of reducing the chances of a rogue device being able to intercept the signal.
+
+Expanding on this dilema , a very low skill attack of just sticking some aluminium  tape on the side of the device could potentiall block the signal from being received by the coordinator. 
