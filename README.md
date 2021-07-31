@@ -236,14 +236,53 @@ Replay attacks are "simplistic" in nature as their end goal is to replay a trans
 [cite](http://conferences.sigcomm.org/sigcomm/2013/papers/srif/p61.pdf)
 
 ## Denial of Service Attacks
-Denial of service Attacks are attacks that cause a device to crash or become unresponsive. They are very common in the form of flooding IMCP packets to webserver or devices to disconnect them from a network. It is one of the oldest and most common types of attacks. In the RF world it is known usually as jamming. To produce a jamming signal ,the jammer uses a signal generator to produce a continuous wave signal which is then sent to the target device. Usually a jammer will send out a stronger signal than the signal it is trying to jam effectively making the target device un-operational. In sound waves , we could cancel out the wave by transmitting an equal and  opossite wave. In doing this, we cancel out the wave and the signal is completely cancelled there for the sum of the waves would be zero. This is not the same concept in the RF world as RF uses transverse waves which to not oscillate the same way..
+Denial of service Attacks are attacks that cause a device to crash or become unresponsive. They are very common in the form of flooding IMCP packets to webserver or devices to disconnect them from a network. It is one of the oldest and most common types of attacks. In the RF world it is known usually as jamming. To produce a jamming signal ,the jammer uses a signal generator to produce a continuous wave signal which is then sent to the target device. Usually a jammer will send out a stronger signal than the signal it is trying to jam effectively making the target device un-operational. In sound waves , we could cancel out the wave by transmitting an equal and  opossite wave. In doing this, we cancel out the wave and the signal is completely cancelled there for the sum of the waves would be zero. This is not the same concept in the RF world as RF uses transverse waves which do not oscillate the same way as sound waves. 
+
+
+
+\int\mathbf{A}dV\cdot\int\mathbf{B}dV\neq \int\mathbf{A}\cdot\mathbf{B}dV=0
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mo data-mjx-texclass="OP">&#x222B;</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mi mathvariant="bold">A</mi>
+  </mrow>
+  <mi>d</mi>
+  <mi>V</mi>
+  <mo>&#x22C5;</mo>
+  <mo data-mjx-texclass="OP">&#x222B;</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mi mathvariant="bold">B</mi>
+  </mrow>
+  <mi>d</mi>
+  <mi>V</mi>
+  <mo>&#x2260;</mo>
+  <mo data-mjx-texclass="OP">&#x222B;</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mi mathvariant="bold">A</mi>
+  </mrow>
+  <mo>&#x22C5;</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mi mathvariant="bold">B</mi>
+  </mrow>
+  <mi>d</mi>
+  <mi>V</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math>
+
+
+RF waves are always perpendicular to the direction of oscillation , thus when we examine their behaviour away from the their source of generatin we can conclude that they are always perpedicular. Therefore , it becomes very diffuct to jam a signal in the same way as sound waves as there are many factors taking place which could cause the signal to pass through. 
+
+Source https://www.physicsforums.com/insights/are-electromagnetic-waves-always-transverse/
+
+
 
 [cite](https://ieeexplore.ieee.org/abstract/document/4132939)
 
 ## Sniffing 
 
-Sniffing is one of the most common forms of RF attacks. Since there is no way of physically hiding an RF transmission , any transmission which does not use some form of encryption , hopping or scrambling faces the threat of being monitored by an unauthorized third party .  
-
+Sniffing is one of the most common forms of RF attacks. Since there is no way of physically hiding an RF transmission , any transmission which does not use some form of encryption , hopping or scrambling faces the threat of being monitored by an unauthorized third party. In many cases using a proprietery protocol can also make it difficult for  inexperienced unauthorized third party to sniff  and decode the signal. This is because the protocol is not well known thus there are no presents available to decode the signal. In this case we can use a software to analyse the signal and determine its modulation , sample rate , bandwidth etc. In our case we will be using a software called Universal radio hacker which is a free and open source software that can be used to analyse the signal. Expanding , once a malicous threat actor managed to sniff and decode a signal , they can then use this information to perform a variety of attacks for example packet manipulation , replay attacks , etc.
 ## Man in the Middle 
 
 A man in the middle attack is performed by a malicious third party by eavesdropping between two or more devices which are communicating with each other. Usually the attacker will try and mask themselves as the receiving or transmitting device that the other device has established a connection to. In doing so it allows the malicious threat actor to sniff and analyze the victims transmission without them knowing and also send back malformed packets which can be used to execute commands remotely . These can be in the form of forged ssl certificates , authentication keys for establishing secure connections or rogue wifi/zigbee/bluetooth devices which try to take control of a victims device. One of the first instances of a man in the middle was the decoding of the German Military's radio communication done by the Royal British Intelligence during world war 2. This was done using the Enigma machine which was used to decode the "encrypted" form of communication done by the German army.
