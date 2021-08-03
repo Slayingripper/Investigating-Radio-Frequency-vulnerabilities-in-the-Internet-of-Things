@@ -379,7 +379,7 @@ To aquire our data we used rtl_433 to decode the data and perform analysis on th
 rtl_433 -d 1 -R 91 -a 4 -A -S all 
 ```
 
-### Attack Senario
+### Attack Scenario
 Many of these weather stations send data to the internet which are used by community driven services. This data is then used to create graphs and send out notifications to users. The data is then stored on the internet and can be accessed by anyone. This is a potential threat if the service becomes overun by malformed information which could render the information useless. One such service is the Citizen Weather Observer Program (COWP) which is a community driven service which provides weather data using community driven weather stations. This information is made available and used by weather services and homeland secuirity. The COWP is a great example of a service which is not only used by the community but also by the government. COWP lists on their website that they are used by over 800 different government and non-government organizations .
 
 
@@ -392,8 +392,8 @@ Many of the sensors are housed in thin plastic casing with little or no shieldin
 #### Replay Attack
 The simplistic nature of the protocol used aswell as the lack of authentication and encryption makes it quite easy to replicate the signal. Furthermore the protocol is very simple and can be easily modified to send out a different message. This attack is very effective as it requires no knowledge of the protocol and can be easily replicated. By capturing the packet using Universal Radio Hacker we were able to analyse it and deconstruct it in a readable format . This was achieved using six different samples if the packe to allow us to cross refrence between them and also detect any changed that might be present in the packet.
 
-While trying to reverse engineeer the packet we deduced that the first 12 bits are used as a preamble to syncronize the local time with the remote time. The next 4 bits are used to encode the synchronization and the remaining bits are used to encode the message being sent. The packets are being sent in 30 second intervals. 
-#### Packet Manupulation 
+While trying to reverse engineeer the packet we deduced that the first 12 bits are used as a preamble to syncronize the local time with the remote time. The next 4 bits are used to encode the synchronization and the remaining bits are used to encode the message being sent. The packets are being sent in 30 second intervals which gives us a 30 second window to send out a message. The message is sent out using the same protocol as the sensor would send it out and is intepreted by the sensor. The message is then decoded and displayed on the screen. 
+#### Packet Manipulation 
 
 
 
@@ -407,7 +407,7 @@ https://github.com/merbanan/rtl_433
 https://fccid.io/2APN5SNZB-02
 https://www.ti.com/lit/ds/symlink/cc2530.pdf?ts=1627450920062&ref_url=https%253A%252F%252Fwww.google.ru%252F
 
-The Sonoff SNZB-02 is a small Temparture / Humidity monitor that operates using the zigbee protocol . It uses a small internal PCB antenna with a maximum power of 3mW or 4.58 dBm . This achieved using a cc2530 chip which is a very small and low power radio chip . The device uses a standard 2.4ghz RF frequency and uses a GFSK modulation which is a very low bandwidth and low power modulation . The device itself is housed in a small plastic casing with minimal shielding from other forms of RF interference . This device is very small and can be used in a small space like a room or in a small space like a room. The device itself will send out a beaconing packet alerting any receiving device of the current temprature and humidity of the area. 
+The Sonoff SNZB-02 is a small Temparture / Humidity monitor that operates using the zigbee protocol . It uses a small internal PCB antenna with a maximum power of 3mW or 4.58 dBm . This achieved using a cc2530 chip which is a very small and low power radio chip . The device uses a standard 2.4 Ghz RF frequency and uses a GFSK modulation which is a very low bandwidth and low power modulation . The device itself is housed in a small plastic casing with minimal shielding from other forms of RF interference . This device is very small and can be used in a small space like a room or in a small space like a room. The device itself will send out a beaconing packet alerting any receiving device of the current temprature and humidity of the area. 
 
 "insert picture here"
 
@@ -426,3 +426,11 @@ The device itself suffers from a poor design element of not having a way to turn
 As we can observe the pcb antenna is located next to the cc2530 chip on the very edge of the board. Although there is very little room for improvment of the board design we can still improve the design by moving the pcb antenna to a different side of the board or even adding an IPX connector to add a small wire antenna . This would allow us to reduce signal loss of the device but also increase its transmission range. This is importart as a lot of the devices are not able to receive signals from a distance greater than a few meters. This has the benefit of reducing the chances of a rogue device being able to intercept the signal.
 
 Expanding on this dilema , a very low skill attack of just sticking some aluminium  tape on the side of the device could potentiall block the signal from being received by the coordinator. 
+
+### Replay Attack 
+Using Universal Radio Hacker we where able to capture the signal of the device but due to the nature of the Zigbee protocol its use of frequency hopping we are unable to succesfully replay the intialisation packet. This means we are unable to connect to the coordinator using our hackrf. Furthermore , just like bluetooth the low bandwidth used by the zigbee protocol means that we are unable to replay the entire packet. We were able to capture part of the packet but not large enough to decode or analyse it . 
+
+### Jamming 
+
+Like most devices it starts sending a beaconing packet on channel 11 (2.405 Ghz) . Channel 11 is the channel most frequently used by devices in the 2.4 Ghz band to initiate the syncroization of the local time with the remote time. This channel is also used by the Zigbee protocol to send out the beaconing packets. But since the Zigbee protocol is designed to use frequency hopping it becomes difficult to actuall jam the channel.
+But after further investigation we manage to Jam the signal using SDRANGEL using its 802.15.4 module. By transmitting a random Zigbee packet we were able to stop the receiver from gathering telemetry from the device. It should be noted that this only worked after syncronizing the device with the coordinator. Furthermore , it should also be noted that the hackrf has a much greater transmit power than the Sonoff device which means that we were just overlapping the signal. We used a bandwidth of 10 Mhz just enough to jam the channel and the one next to it , this allowed us to stop the device from hopping over to a "free" channel". 
