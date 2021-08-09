@@ -13,6 +13,9 @@ The worm can then spread from a single smart bulb to those nearby thanks to the 
 [cite]https://www.theregister.com/2016/11/10/iot_worm_can_hack_philips_hue_lightbulbs_spread_across_cities/
 
 [cite]https://blog-assets.f-secure.com/wp-content/uploads/2019/09/12093807/2019_attack_landscape_report.pdf
+
+[cite](K.  Rawlinson,  “HP  study  reveals  70  percent  of  internet  of  
+things devices vulnerable to attack”, 2014)
 ## Motivation 
 
 
@@ -163,7 +166,8 @@ The main compromised which was made during the testing of the jamming attacks wa
 
 [cite](Solving Urban Infrastructure Problems Using Smart City Technologies)
 
-## Analysis of impersonation attacks on systems using RF fingerprinting and low-end receivers
+## A Lightweight Replay Attack Detection Framework for Battery Depended IoT Devices Designed for Healthcare 
+The paper proposed a solution to replay attacks toward low end IoT devices. The proposed solution uses Universaly unique identifier (UUID) to identify the device and uses a hash function to create a unique signature for each device. The signature is then hashed with a secret key which is used to create a unique signature for each device. Expanding, with the use of timestamps it keeps a short log of events triggered while also adding a unique identifier to each log entry. The unique identifier is then used to identify the operation before and after execution. Furthermore, it theoretically use a the battery depletion monitor to monitor battery power and append it to every new log that is created , this creates a theoreticaly low powered solution to monitoring any attacks. If a command is replayed back to the device that is exactly the same as the previous one it would be rejected by the microcontroller as it it will be detected asa replay attack. The issue in using such a solution , it assumes that all IoT devices use similar hardware specifications. This is an issue since not all microcontroller work in the same way and this could create compatibility issues. One major flaw of the solution is that it continously creates a log of excecuting commands , which is not a good solution for a battery dependent device as it would contastly consume power and eventually run out of battery. In reality , even if it detects a replay attack it would end up becoming a Denial oF Service attack due to this limiting factor. 
 
 
 ## A Technical Review of Wireless security for the Internet of things: Software Defined Radio perspective
