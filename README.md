@@ -21,13 +21,15 @@ things devices vulnerable to attack”, 2014)
 
 ## Dissertation Structure 
 
-### Related Work
-### Design
-### Implementation
-### Methodology 
-### Conclusion
-### Reflection
+## Related Work
+In this section we shall explore related work which have been done in the past on radio frequency vulnerabilities in Iot devices. We shall also critically analyse the results and conclusions of the related works as well as the methodologies and testing environments used.
+## Design
+## Implementation
+## Methodology 
+## Conclusion
+## Reflection
 
+# Equipment and Test Setup
 
 ## Hack RF
 
@@ -35,6 +37,10 @@ The HackRF is a half-duplex sdr transceiver designed for RF investigation. It ha
 The HackRF is compatable with GNU-Radio allowing it be calibrated to work with multiple other equipment and protocols. One of the main disadvatages of the HackRF is its subpar receive perfomance .
 ![HackRF one](https://greatscottgadgets.com/images/h1-preliminary1-445.jpeg)
 
+## RLT-SDR (NESDR)
+The NESDR is a low cost SDR receiver capable of receiving from 25Mhz up to 1.7 Ghz. Its wide popularity has given rise to multiple software packages supporting it with a wide range of  decoding protocols such as DMR,APRS,LORA,P25,FSK, etc. The low cost of the NESDR makes it a good choice for testing and development purposes as is it has a much greater sensitivity than the HackRF when paired with a resonant antenna. In contrast to the HackRF the Smart SDR is only capable of receiving but has an overall better software compatibility. RTL-SDR based devices are based on two chips . The RTL2832U demodulator chip and the R820T2 tuner chip. It also features a 0.5 PPM(parts per million) low noise Temprature Compensated Crystal Oscillator (TCXO) chip capable of keeping the tuner in sync with the demodulator as it heats up. Since heat is a major factor in the signal stability of the tuner it is important to keep the device in a stable temperature range.
+
+[cite]( add info from rtlsdr.org)
 ## Zigbee
 
 The Zigbee protocol is a IOT specific protocol used for the transmission of data from sensors and automotation control networks using the IEEE 802.15.4 standard. It uses very low data datarates of around 250Kpbs which operated on the microwave frequency allocation of 868 , 902-928 Mhz and 2.4 ghz frequencies. Usually higher frequencies are used to transfer data between devices at higher datarates but closer range. Usually Zigbee devices have a maximum range of 100m (assuming propagation allows)
@@ -171,8 +177,7 @@ The paper proposed a solution to replay attacks toward low end IoT devices. The 
 
 
 ## A Technical Review of Wireless security for the Internet of things: Software Defined Radio perspective
-Interesting ideas for attacks but most of them can be achieved with cheap SDR hardware like the RTL_SDR , NooElec smart sdr.
-Rebroadcasting ACARS packets is nothing new or difficult to do. It can be done easily with a Baofeng UV-5R and a cheap arduino or raspberry pi.
+The paper presents examples of attacks that can be done using software defined radio on IoT Devices.It explores some attacks that require planning for example replaying ACARS packets but also simplistic attacks like sniffing telemetry data using cheap SDR hardware.
 They paper does have a full list of attacks with a few examples as well as the devices capable of the attacks. The issue lies with the fact many of the more sophisticated attacks require a lot of power ,a lot of time to complete but also a lot of money to purchase the hardware. For example the attack on GSM ,GNSS , and Bluetooth requires a USRP which is not only expensive but also large in size compared to a hackrf one. A best case scenario would be to use it in a specific built vehicle  like the Israeli Spy van in seized Cyprus. A van like that is was equiped with over £9 million worth of equipment and was used to carry out a lot of attacks such as the alleged surveillance  of high value assets from the Middle East. What we can deduce from this is that a large amount of these attacks are usually state sponsored on usually only target high value targets . That said we should not rule out the threat of these attacks but we should be aware of the fact that they are state sponsored and that they are not going to be easy to detect or targeted to the average person. Expanding, the paper has made some claimed that some of the attacks like the ones on NFC can be prevented by using a USRP. Although this might be possible since it will make it difficult of anyone with a device such as a hackrf to correctly sniff the signal. It means that the cost of securing from an attack like this is quite high with the chances of it happenig being quite low. Even if the attack happens "descreatly" using the hackrf in a "portapack" it should be noted that the attacker would need to get very close to the victim(even physically touching them) for this to happen and at that point the NFC signal would over power the signal generated by the USRP because of attenuation. Concluding as stated in the paper , cybersecuirity challenges which arise from the use of software defined radio toward IoT devices are extreamly complex and therefore are not something that we can expect to be able to solve in a short amount of time. Software Defined Radios are a great tool that should be used to secure IoT devices and should be combined with other security measures to make sure that the devices are secure from different kinds of attacks.
 
 https://www.securityweek.com/cyprus-arrests-three-israeli-spy-van-probe
@@ -319,6 +324,10 @@ Man in the Middle(MITM) attack usually happen on the communication layer . One o
 #
 # Testing 
 
+For conducting our experiments we placed the devices in close proximity to our softwware defined radios. To eliminate the chances of interference we placed the devices in a large room with no other devices turned on in close proximity. Since our main receiving device the Hackrf is poor receive perfomance we did not have to worry about interference from device from other rooms. In the case of of testing our Weather Station sensors we used an RTL-SDR (SMART SDR) which was connected to a Raspberry pi using the RTL_433 decoding software. This allowed us to filter out any unwanted signals and capture only the ones we needed.
+
+
+
 ## Belkin NestCAm hd
 
 The Belking Nestcam HD (insert Information here)
@@ -415,6 +424,7 @@ The simplistic nature of the protocol used aswell as the lack of authentication 
 
 While trying to reverse engineeer the packet we deduced that the first 12 bits are used as a preamble to syncronize the local time with the remote time. The next 4 bits are used to encode the synchronization and the remaining bits are used to encode the message being sent. The packets are being sent in 30 second intervals which gives us a 30 second window to send out a message. The message is sent out using the same protocol as the sensor would send it out and is intepreted by the sensor. The message is then decoded and displayed on the screen. 
 #### Packet Manipulation 
+Building on our replay attack and the decoding of the signal using URH , we can further try to modify the packets using signal generator packet. After changing values randomely in the data part of the packet we were able to send out a modified packet  which was decoded by the sensor and displayed on the screen. This was achieved by sending out a modified packet with the same preamble thus allowing the receiver to identify the signal .
 
 
 
