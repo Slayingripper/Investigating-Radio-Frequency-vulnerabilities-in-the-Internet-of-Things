@@ -34,13 +34,42 @@ In this section we shall explore related work which have been done in the past o
 ## Hack RF
 
 The HackRF is a half-duplex sdr transceiver designed for RF investigation. It has an operating frequency of 1Mhz - 6Ghz with a 8-bit quadrature sample rate. The hackrf has a maximun transmition power of 30mW this makes it suitable for transmittion at close ranges but it prone to emission of sperodic emissions which could compromise nearby equipment if used with amplification equipment.
-The HackRF is compatable with GNU-Radio allowing it be calibrated to work with multiple other equipment and protocols. One of the main disadvatages of the HackRF is its subpar receive perfomance .
+The HackRF is compatable with GNU-Radio allowing it be calibrated to work with multiple other equipment and protocols. One of the main disadvatages of the HackRF is its subpar receive perfomance . In our case we added a Temprature Compensated Crystal Oscillator (TCXO) to the HackRF to increase the receive performance to minimise frequency drift while receiving for long periods from time. We will explore the usefulness of a TCXO in the context of this research in the next section.[REFERENCE]
+
 ![HackRF one](https://greatscottgadgets.com/images/h1-preliminary1-445.jpeg)
 
 ## RLT-SDR (NESDR)
 The NESDR is a low cost SDR receiver capable of receiving from 25Mhz up to 1.7 Ghz. Its wide popularity has given rise to multiple software packages supporting it with a wide range of  decoding protocols such as DMR,APRS,LORA,P25,FSK, etc. The low cost of the NESDR makes it a good choice for testing and development purposes as is it has a much greater sensitivity than the HackRF when paired with a resonant antenna. In contrast to the HackRF the Smart SDR is only capable of receiving but has an overall better software compatibility. RTL-SDR based devices are based on two chips . The RTL2832U demodulator chip and the R820T2 tuner chip. It also features a 0.5 PPM(parts per million) low noise Temprature Compensated Crystal Oscillator (TCXO) chip capable of keeping the tuner in sync with the demodulator as it heats up. Since heat is a major factor in the signal stability of the tuner it is important to keep the device in a stable temperature range.
 
 [cite]( add info from rtlsdr.org)
+
+## Temprature Compensated Crystal Oscillator (TCXO)
+
+Temperature Compensate Crystal Oscillators are used to correct the voltage of the tuner chip which results in variations in frequency over temperature differential.The voltage correction is applied to varactor diode located on the crystal circuit which varies the crystal frequency by a miniscual amount. This results in a much more stable frequency. TCXO can reach a stability of 0.1 PPM but there are some issues being introduced. When a TCXO chip resides at a temperature extreme for long periods of time might a exhibit a frequency shift when it returns back to its normal ambient room temprature. This is a major issue for long term operation of the device as it might skew the results of the project. For example, whe monitoring a device for long periods of time so we can sniff packets being transmitted by the device we might experience a shift in frequency causing loss of packets even when we are "monitoring" on the correct frequency of operation. This hysterisis error is temporary but it is imporatant to take into account when monitoring a device for long periods of time.
+
+
+
+(
+  @ARTICLE{7065313,
+
+  author={Huang, Xianhe and Liu, Dong and Wang, Yan and Chen, Pingping and Fu, Wei},
+
+  journal={IEEE Transactions on Circuits and Systems II: Express Briefs}, 
+
+  title={100-MHz Low-Phase-Noise Microprocessor Temperature-Compensated Crystal Oscillator}, 
+
+  year={2015},
+
+  volume={62},
+
+  number={7},
+
+  pages={636-640},
+
+  doi={10.1109/TCSII.2015.2415652}}
+
+)
+
 ## Zigbee
 
 The Zigbee protocol is a IOT specific protocol used for the transmission of data from sensors and automotation control networks using the IEEE 802.15.4 standard. It uses very low data datarates of around 250Kpbs which operated on the microwave frequency allocation of 868 , 902-928 Mhz and 2.4 ghz frequencies. Usually higher frequencies are used to transfer data between devices at higher datarates but closer range. Usually Zigbee devices have a maximum range of 100m (assuming propagation allows)
