@@ -47,6 +47,10 @@ The NESDR is a low cost SDR receiver capable of receiving from 25Mhz up to 1.7 G
 
 Temperature Compensate Crystal Oscillators are used to correct the voltage of the tuner chip which results in variations in frequency over temperature differential.The voltage correction is applied to varactor diode located on the crystal circuit which varies the crystal frequency by a miniscual amount. This results in a much more stable frequency. TCXO can reach a stability of 0.1 PPM but there are some issues being introduced. When a TCXO chip resides at a temperature extreme for long periods of time might a exhibit a frequency shift when it returns back to its normal ambient room temprature. This is a major issue for long term operation of the device as it might skew the results of the project. For example, whe monitoring a device for long periods of time so we can sniff packets being transmitted by the device we might experience a shift in frequency causing loss of packets even when we are "monitoring" on the correct frequency of operation. This hysterisis error is temporary but it is imporatant to take into account when monitoring a device for long periods of time.
 
+[cite](Design Technique for Analog Temperature Compensation of 
+Crystal Oscillators)
+
+
 
 
 (
@@ -72,7 +76,7 @@ Temperature Compensate Crystal Oscillators are used to correct the voltage of th
 
 ## Zigbee
 
-The Zigbee protocol is a IOT specific protocol used for the transmission of data from sensors and automotation control networks using the IEEE 802.15.4 standard. It uses very low data datarates of around 250Kpbs which operated on the microwave frequency allocation of 868 , 902-928 Mhz and 2.4 ghz frequencies. Usually higher frequencies are used to transfer data between devices at higher datarates but closer range. Usually Zigbee devices have a maximum range of 100m (assuming propagation allows)
+The Zigbee protocol is a IOT specific protocol used for the transmission of data from sensors and automotation control networks using the IEEE 802.15.4 standard. It uses very low data data rates of around 250Kpbs which operated on the microwave frequency allocation of 868 , 902-928 Mhz and 2.4 ghz frequencies. Usually higher frequencies are used to transfer data between devices at higher datarates but closer range. Usually Zigbee devices have a maximum range of 100m (assuming propagation allows)
 
 https://www.sciencedirect.com/topics/engineering/zigbee-protocol
 
