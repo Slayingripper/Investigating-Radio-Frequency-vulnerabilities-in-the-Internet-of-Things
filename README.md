@@ -283,7 +283,7 @@ Split-Band inversion works by adding one more carrier frequency which devides th
 
 #### Scrambling conclusion
 
-There are automated programs that do this for us one example is deinvert by Oona Raisanen which can automatically monitor a frequency using an RTL-SDR and do the whole processes without any fiddling around. This also works with Split-Band Inversion but at a lower success rate. 
+There are automated programs that do this for us one example is "deinvert" by Oona Raisanen which can automatically monitor a frequency using an RTL-SDR and do the whole processes without any fiddling around. This also works with Split-Band Inversion but at a lower success rate. 
 [Deinvert](https://github.com/windytan/deinvert)
 On its own scrambling is effectively weak and only stops the weakest of malicious actors from listening and sniffing data. It needs to be combined with other forms of security.
 
