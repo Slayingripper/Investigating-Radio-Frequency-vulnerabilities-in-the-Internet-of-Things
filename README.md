@@ -132,9 +132,9 @@ Every electronic device which utilizes Radio frequencies for communication and o
 | 2        | 1            | 3            | 2                 | Wavelength = (2/2) \* L           |
 | 3        | 3/2          | 4            | 3                 | Wavelength = (2/3) \* L           |
 
-L=n/2 (lambda)
 
-λ [wavelength] = c [speed of light] / ƒ [frequency]
+
+
 
 When a wave oscillates it will produces harmonic waves with a reduction in bandwidth every time which results in an oscillation on a different frequency . In our case this could allow for attacks to be carried out by using even less "sophisticated" equipment by transmitting on lower frequencies.
 
@@ -427,9 +427,6 @@ The hive hub is a zigbee device coordinator used to connect and control multiple
 inFactory sensors are widely used sensors which can be found in many weather stations. Many of these weather stations either have built in functionality to send data over the internet or use an other thirdparty device to do this for them . They usually operate on 433.920 Mhz using FSK modulation which send out packets to neighbouring monitoring devices which display the data. This data is sent using an unencrypted signal which can be decoded using the rtl_433 software. Many IoT enthusiasts have used rtl_433 to decode the data and perform analysis on the data. 
 
 To aquire our data we used rtl_433 to decode the data and perform analysis on the data. We were able to see that the data was being sent out using a frequency of 433.920 Mhz. This frequency is used by the COWP weather stations to send out data. We used the following command to decode , store the signal and later perform analysis on the data using Universal Radio Hacker. The flags used in the command are as follows:
-
-
-
 
 - -d: Device number
 - -R: Device ID (at specified in rtl_433 wiki)
