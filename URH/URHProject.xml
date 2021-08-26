@@ -17,7 +17,6 @@
     <rx_gain>25</rx_gain>
     <rx_if_gain>20</rx_if_gain>
     <sample_rate>2000000.0</sample_rate>
-    <subdevice/>
     <tx_antenna_index>-1</tx_antenna_index>
     <tx_baseband_gain>16</tx_baseband_gain>
     <tx_gain>0</tx_gain>
